@@ -44,6 +44,7 @@ public class BoostrapData implements CommandLineRunner {
 
         Author ericSaved = authorRepository.save(eric);
         Book dddSaved = bookRepository.save(ddd);
+        dddSaved.getAuthors().add(ericSaved);
         Publisher pub1Saved = publisherRepository.save(pub1);
 
         Author rod = new Author();
@@ -56,11 +57,11 @@ public class BoostrapData implements CommandLineRunner {
 
         Author rodSaved = authorRepository.save(rod);
         Book noEJBSaved = bookRepository.save(noEJB);
+        noEJBSaved.getAuthors().add(rodSaved);
 
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(noEJBSaved);
-        pub1Saved.getBooks().add(dddSaved);
-        pub1Saved.getBooks().add(noEJBSaved);
+
         dddSaved.setPublisher(pub1Saved);
         noEJBSaved.setPublisher(pub1Saved);
 
