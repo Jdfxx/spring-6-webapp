@@ -3,7 +3,6 @@ package pl.filiphagno.spring_6_webapp.domain;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity
